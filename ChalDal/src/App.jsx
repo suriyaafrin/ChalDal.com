@@ -76,35 +76,27 @@ const products = [
 ];
 const brands = [
   {
-    
     logo: "https://images.seeklogo.com/logo-png/45/2/pran-logo-png_seeklogo-455206.png",
   },
   {
-    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/reckitt.png?q=low&webp=1",
   },
   {
-    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/nestle.png?q=low&webp=1",
   },
   {
-    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/uniliver.png?q=low&webp=1",
   },
   {
-    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/godrej-seeklogo.png?q=low&webp=1",
   },
   {
-    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/coca-cola.png?q=low&webp=1",
   },
   {
-    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/fresh.png?q=low&webp=1",
   },
   {
-    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/reckitt.png?q=low&webp=1",
   },
 ];
@@ -210,7 +202,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="h-20 w-full border-b border-purple-400 bg-gradient-to-r from-[#d9d0e6] to-[#cfc6dd] flex items-center justify-between px-6 sticky top-0 z-30">
+        <div className="h-20 w-full border-b border-purple-400 bg-linear-to-r from-[#d9d0e6] to-[#cfc6dd] flex items-center justify-between px-6 sticky top-0 z-30">
           <div className="flex items-center gap-15">
             <i
               className="fa-solid fa-bars text-2xl text-black cursor-pointer hover:text-purple-600 transition-colors"
@@ -225,14 +217,10 @@ export default function App() {
 
             <div className="flex items-center gap-2">
               <i className="fa-solid fa-location-dot text-purple-500"></i>
-              <select className="text-purple-500 border-none outline-none bg-transparent cursor-pointer font-medium">
-                <option className="bg-purple-300 hover:bg-purple-200">
-                  Dhaka
-                </option>
-                <option className="bg-purple-300">
-                  Use my current location
-                </option>
-                <option className="bg-purple-300">Change City</option>
+              <select className="text-purple-500  border-none outline-none bg-transparent cursor-pointer font-medium">
+                <option className="bg-white  hover:bg-purple-200">Dhaka</option>
+                <option className="bg-white">Use my current location</option>
+                <option className="bg-white">Change City</option>
               </select>
             </div>
           </div>
@@ -244,7 +232,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="w-full bg-gradient-to-r from-[#d9d0e6] to-[#cfc6dd] flex flex-col md:flex-row items-center px-6 md:px-10 py-10 md:py-0 md:h-80 lg:h-90 overflow-hidden">
+      <div className="w-full bg-linear-to-r from-[#d9d0e6] to-[#cfc6dd] flex flex-col md:flex-row items-center px-6 md:px-10 py-10 md:py-0 md:h-80 lg:h-90 overflow-hidden">
         <div className="w-full md:w-1/2 flex flex-col gap-6 md:gap-10 items-start">
           <p className="text-2xl sm:text-3xl font-bold text-black text-left leading-snug">
             Grocery Delivered at your Doorstep
@@ -269,28 +257,28 @@ export default function App() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5 p-4 sm:p-6 md:p-10 md:ml-10 lg:ml-20">
         <div className="h-14 sm:h-15 w-full border border-gray-300 rounded-2xl flex items-center gap-3 px-4 sm:px-5">
-          <i className="fa-brands fa-product-hunt text-purple-500 text-lg flex-shrink-0"></i>
+          <i className="fa-brands fa-product-hunt text-purple-500 text-lg shrink-0"></i>
           <p className="text-sm sm:text-base">
             <b>+15000 products</b> to shop from
           </p>
         </div>
 
         <div className="h-14 sm:h-15 w-full border border-gray-300 rounded-2xl flex items-center gap-3 px-4 sm:px-5">
-          <i className="fa-brands fa-paypal text-purple-500 text-lg flex-shrink-0"></i>
+          <i className="fa-brands fa-paypal text-purple-500 text-lg shrink-0"></i>
           <p className="text-sm sm:text-base">
             Pay <b>after</b> receiving products
           </p>
         </div>
 
         <div className="h-14 sm:h-15 w-full border border-gray-300 rounded-2xl flex items-center gap-3 px-4 sm:px-5">
-          <i className="fa-solid fa-box text-purple-500 text-lg flex-shrink-0"></i>
+          <i className="fa-solid fa-box text-purple-500 text-lg shrink-0"></i>
           <p className="text-sm sm:text-base">
             Get your delivery within <b>1 hour</b>
           </p>
         </div>
 
         <div className="h-14 sm:h-15 w-full border border-gray-300 rounded-2xl flex items-center gap-3 px-4 sm:px-5">
-          <i className="fa-regular fa-money-bill-1 text-purple-500 text-lg flex-shrink-0"></i>
+          <i className="fa-regular fa-money-bill-1 text-purple-500 text-lg shrink-0"></i>
           <p className="text-sm sm:text-base">
             Get offers that <b>Save Money</b>
           </p>
@@ -344,18 +332,14 @@ export default function App() {
         </div>
       </div>
       <div className="px-6 py-4">
-        <h2 className="text-2xl font-semibold text-gray-400 mb-5">
+        <h2 className="text-2xl font-semibold text-gray-400  mb-5">
           Popular on Chaldal
         </h2>
         <div className="flex">
           {brands.map((brand) => (
-            <div
-              key={brand.name}
-              className="flex items-center justify-center p-5"
-            >
+            <div className="flex items-center justify-center p-5">
               <img
                 src={brand.logo}
-                alt={brand.name}
                 className="w-100 h-30 object-contain"
                 onError={(e) => {
                   e.target.style.display = "none";
@@ -370,24 +354,27 @@ export default function App() {
           Shop & Get More
         </h2>
 
-        
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
           {perks.map((perk) => (
             <div
               key={perk.id}
               className="flex-1 flex flex-col gap-4 bg-gray-200 rounded-2xl overflow-hidden"
             >
-              <h3 className="text-lg font-semibold text-gray-800 text-left px-5 pt-5">
-                {perk.title}
-              </h3>
-              <p className="text-sm text-gray-500 text-left px-5">
-                {perk.description}
-              </p>
-              <img
-                src={perk.image}
-                alt={perk.title}
-                className="w-full h-48 object-cover rounded-b-2xl bg-gray-100"
-              />
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 text-left px-5 pt-5">
+                  {perk.title}
+                </h3>
+                <p className="line-clamp-2 text-sm text-gray-500 text-left px-5">
+                  {perk.description}
+                </p>
+              </div>
+              <div className="h-48">
+                <img
+                  src={perk.image}
+                  alt={perk.title}
+                  className="w-full h-48 object-cover rounded-b-2xl bg-gray-100"
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -419,9 +406,6 @@ export default function App() {
               src="https://www.youtube.com/embed/GT0d3lCpZWg?si=QUUGDuwHCwOdCIIV"
               title="YouTube video player"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
             />
           </div>
         </div>
@@ -458,15 +442,13 @@ export default function App() {
               <p className="text-base font-semibold text-gray-900 mb-1 truncate">
                 {item.title}
               </p>
-              <p className="text-sm text-gray-500 line-clamp-2">
-                {item.description}
-              </p>
+              <p className="text-sm text-gray-500 ">{item.description}</p>
             </div>
 
             <img
               src={item.image}
               alt={item.title}
-              className="w-20 h-20 object-cover flex-shrink-0 bg-gray-50"
+              className="w-20 h-20 object-cover shrink-0 bg-gray-50"
             />
           </div>
         ))}
