@@ -76,35 +76,35 @@ const products = [
 ];
 const brands = [
   {
-    name: "Pran",
+    
     logo: "https://images.seeklogo.com/logo-png/45/2/pran-logo-png_seeklogo-455206.png",
   },
   {
-    name: "Instagram",
+    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/reckitt.png?q=low&webp=1",
   },
   {
-    name: "Nestle",
+    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/nestle.png?q=low&webp=1",
   },
   {
-    name: "Unilever",
+    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/uniliver.png?q=low&webp=1",
   },
   {
-    name: "Instagram",
+    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/godrej-seeklogo.png?q=low&webp=1",
   },
   {
-    name: "Instagram",
+    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/coca-cola.png?q=low&webp=1",
   },
   {
-    name: "Instagram",
+    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/fresh.png?q=low&webp=1",
   },
   {
-    name: "Instagram",
+    
     logo: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/reckitt.png?q=low&webp=1",
   },
 ];
@@ -165,9 +165,11 @@ const warehouses = [
     description: "customer savings",
   },
 ];
+const divisions = ["Dhaka", "Chittagong", "Jessore"];
 
 const CARDS_PER_PAGE = 5;
 export default function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
   const canPrev = index > 0;
@@ -187,76 +189,109 @@ export default function App() {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
       </head>
-      <div className="h-20 w-full border-b border-purple-400 bg-gradient-to-r from-[#d9d0e6] to-[#cfc6dd] flex items-center justify-between px-6 sticky top-0 z-50">
-        <div className="flex items-center gap-15">
-          <i className="fa-solid fa-bars text-2xl text-black cursor-pointer"></i>
-
-          <img
-            className="h-12 w-32 object-contain"
-            src="https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/components/header/Header/images/logo-small-v2.svg?q=best&webp=1"
-            alt="logo"
+      <div>
+        {sidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black opacity-40 z-40"
+            onClick={() => setSidebarOpen(false)}
           />
+        )}
 
-          <div className="flex items-center gap-2">
-            <i className="fa-solid fa-location-dot text-purple-500"></i>
-            <select className="text-purple-500 border-none outline-none bg-transparent cursor-pointer font-medium">
-              <i class="fa-solid fa-location-crosshairs"></i>
-              <option className="hover:bg-purple-100">Dhaka</option>
-              <option>Use my current location</option>
-              <option>Change City</option>
-            </select>
+        <div
+          className={`fixed top-0 left-0 h-full w-64 bg-white z-50 shadow-2xl transform transition-transform duration-300 ${
+            sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <div className="flex items-center justify-end px-5 py-5 border-b border-purple-100">
+            <i
+              className="fa-solid fa-xmark text-xl text-gray-500 cursor-pointer hover:text-purple-500"
+              onClick={() => setSidebarOpen(false)}
+            />
           </div>
         </div>
 
-        <div>
-          <button className="h-10 px-6 bg-purple-500 text-white rounded cursor-pointer hover:bg-purple-600">
-            Login
-          </button>
+        <div className="h-20 w-full border-b border-purple-400 bg-gradient-to-r from-[#d9d0e6] to-[#cfc6dd] flex items-center justify-between px-6 sticky top-0 z-30">
+          <div className="flex items-center gap-15">
+            <i
+              className="fa-solid fa-bars text-2xl text-black cursor-pointer hover:text-purple-600 transition-colors"
+              onClick={() => setSidebarOpen(true)}
+            />
+
+            <img
+              className="h-12 w-32 object-contain"
+              src="https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/components/header/Header/images/logo-small-v2.svg?q=best&webp=1"
+              alt="logo"
+            />
+
+            <div className="flex items-center gap-2">
+              <i className="fa-solid fa-location-dot text-purple-500"></i>
+              <select className="text-purple-500 border-none outline-none bg-transparent cursor-pointer font-medium">
+                <option className="bg-purple-300 hover:bg-purple-200">
+                  Dhaka
+                </option>
+                <option className="bg-purple-300">
+                  Use my current location
+                </option>
+                <option className="bg-purple-300">Change City</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <button className="h-10 px-6 bg-purple-500 text-white rounded cursor-pointer hover:bg-purple-600">
+              Login
+            </button>
+          </div>
         </div>
       </div>
-      <div className="h-90 w-full  bg-gradient-to-r from-[#d9d0e6] to-[#cfc6dd] flex items-center">
-        <div className="w-1/2 flex flex-col gap-10 p-10 items-start">
-          <p className="text-3xl font-bold text-black text-left">
+      <div className="w-full bg-gradient-to-r from-[#d9d0e6] to-[#cfc6dd] flex flex-col md:flex-row items-center px-6 md:px-10 py-10 md:py-0 md:h-80 lg:h-90 overflow-hidden">
+        <div className="w-full md:w-1/2 flex flex-col gap-6 md:gap-10 items-start">
+          <p className="text-2xl sm:text-3xl font-bold text-black text-left leading-snug">
             Grocery Delivered at your Doorstep
           </p>
 
           <div className="relative w-full">
             <input
-              className="h-12 w-full border-1 border-gray-400 px-5 pr-12 placeholder-gray-500 bg-white rounded"
+              className="h-11 sm:h-12 w-full border border-gray-400 px-5 pr-12 placeholder-gray-400 bg-white rounded outline-none focus:border-purple-400 text-sm sm:text-base"
               placeholder="Search for products (e.g. eggs, milk, potato)"
             />
-            <i className="fas fa-search absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl"></i>
+            <i className="fas fa-search absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg"></i>
           </div>
         </div>
-        <div>
+
+        <div className="w-full md:w-1/2 flex justify-center items-end mt-6 md:mt-0 md:self-end">
           <img
-            className="h-70 w-120"
+            className="h-48 sm:h-60 md:h-64 lg:h-72 w-auto object-contain"
             src="https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/imageBanner.png?q=low&webp=1"
+            alt="grocery banner"
           />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-5 p-10 ml-20">
-        <div className="h-15 w-80 border-1 border-gray-300 rounded-2xl flex items-center justify-around p-5">
-          <i class="fa-brands fa-product-hunt"></i>
-          <p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5 p-4 sm:p-6 md:p-10 md:ml-10 lg:ml-20">
+        <div className="h-14 sm:h-15 w-full border border-gray-300 rounded-2xl flex items-center gap-3 px-4 sm:px-5">
+          <i className="fa-brands fa-product-hunt text-purple-500 text-lg flex-shrink-0"></i>
+          <p className="text-sm sm:text-base">
             <b>+15000 products</b> to shop from
           </p>
         </div>
-        <div className="h-15 w-80 border-1 border-gray-300 rounded-2xl flex items-center justify-around p-5">
-          <i class="fa-brands fa-paypal"></i>
-          <p>
+
+        <div className="h-14 sm:h-15 w-full border border-gray-300 rounded-2xl flex items-center gap-3 px-4 sm:px-5">
+          <i className="fa-brands fa-paypal text-purple-500 text-lg flex-shrink-0"></i>
+          <p className="text-sm sm:text-base">
             Pay <b>after</b> receiving products
           </p>
         </div>
-        <div className="h-15 w-80 border-1 border-gray-300 rounded-2xl flex items-center justify-around p-5">
-          <i class="fa-solid fa-box"></i>
-          <p>
+
+        <div className="h-14 sm:h-15 w-full border border-gray-300 rounded-2xl flex items-center gap-3 px-4 sm:px-5">
+          <i className="fa-solid fa-box text-purple-500 text-lg flex-shrink-0"></i>
+          <p className="text-sm sm:text-base">
             Get your delivery within <b>1 hour</b>
           </p>
         </div>
-        <div className="h-15 w-80 border-1 border-gray-300 rounded-2xl flex items-center justify-around p-5">
-          <i class="fa-regular fa-money-bill-1"></i>
-          <p>
+
+        <div className="h-14 sm:h-15 w-full border border-gray-300 rounded-2xl flex items-center gap-3 px-4 sm:px-5">
+          <i className="fa-regular fa-money-bill-1 text-purple-500 text-lg flex-shrink-0"></i>
+          <p className="text-sm sm:text-base">
             Get offers that <b>Save Money</b>
           </p>
         </div>
@@ -330,60 +365,65 @@ export default function App() {
           ))}
         </div>
       </div>
-      <div className="px-6 py-4">
+      <div className="px-4 sm:px-6 py-4">
         <h2 className="text-2xl font-semibold text-gray-400 mb-5">
           Shop & Get More
         </h2>
-        <div className="flex gap-6 ">
+
+        
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
           {perks.map((perk) => (
             <div
               key={perk.id}
-              className="flex-1 flex flex-col gap-4 bg-gray-200 rounded-2xl "
+              className="flex-1 flex flex-col gap-4 bg-gray-200 rounded-2xl overflow-hidden"
             >
-              <h3 className="text-lg font-semibold text-gray-800 text-left p-5">
+              <h3 className="text-lg font-semibold text-gray-800 text-left px-5 pt-5">
                 {perk.title}
               </h3>
-              <p className="text-sm text-gray-500  text-left p-5">
+              <p className="text-sm text-gray-500 text-left px-5">
                 {perk.description}
               </p>
-              <br></br>
               <img
                 src={perk.image}
                 alt={perk.title}
-                className="w-full h-48  rounded-2xl bg-gray-100"
+                className="w-full h-48 object-cover rounded-b-2xl bg-gray-100"
               />
             </div>
           ))}
         </div>
-        <div className="flex item-center p-10 gap-5">
-          <div className="relative w-120 h-70">
+
+        <div className="flex flex-col lg:flex-row items-stretch gap-5 pt-8 px-0 sm:px-4 lg:px-6">
+          <div className="relative w-full lg:w-1/2 h-64 sm:h-72 rounded-2xl overflow-hidden">
             <img
-              className="h-70 w-120 rounded-2xl object-cover"
+              className="absolute inset-0 w-full h-full object-cover rounded-2xl"
               src="https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/shop_and_get_More/dailyGrocery.png"
               alt="Daily Grocery"
             />
-            <div className="absolute inset-0 flex flex-col  p-4  rounded-2xl">
-              <h2 className="w-30 text-black text-xl font-bold text-left pt-4">
+            <div className="absolute inset-0 flex flex-col p-4 sm:p-6 rounded-2xl">
+              <h2 className="w-36 sm:w-40 text-black text-lg sm:text-xl font-bold text-left pt-2 sm:pt-4">
                 Shop your daily necessities
               </h2>
-              <p className="w-70 text-black text-sm mt-2 text-left pt-3">
+              <p className="w-56 sm:w-72 text-black text-sm mt-2 text-left pt-2 sm:pt-3">
                 Shop from our popular category, Explore special offers and
                 receive grocery on your doorsteps within 1 hour.
               </p>
-              <button className="w-40 mt-10 bg-purple-500 text-white px-4 py-2 rounded-lg font-semibold">
+              <button className="w-36 sm:w-40 mt-6 sm:mt-10 bg-purple-500 text-white px-4 py-2 rounded-lg font-semibold text-sm sm:text-base">
                 Start Shopping
               </button>
             </div>
           </div>
-          <iframe
-            className="rounded-2xl w-120 h-70"
-            src="https://www.youtube.com/embed/GT0d3lCpZWg?si=QUUGDuwHCwOdCIIV"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+
+          <div className="w-full lg:w-1/2 h-64 sm:h-72 rounded-2xl overflow-hidden">
+            <iframe
+              className="w-full h-full rounded-2xl"
+              src="https://www.youtube.com/embed/GT0d3lCpZWg?si=QUUGDuwHCwOdCIIV"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
         </div>
       </div>
       <div className="w-full h-80  bg-purple-50 flex items-center justify-between">
@@ -404,25 +444,25 @@ export default function App() {
             />
           </div>
         </div>
-        <div>
+        <div className="pt-13">
           <img src="https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/stores/chaldal/components/landingPage2/LandingPage/images/downloadApp.png?q=low&webp=1" />
         </div>
       </div>
-      <div className="flex gap-4 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
         {warehouses.map((item) => (
           <div
             key={item.id}
-            className="flex items-center bg-gray-100 rounded-2xl border border-gray-100 overflow-hidden "
+            className="flex items-center bg-gray-100 rounded-2xl border border-gray-100 overflow-hidden"
           >
-            
-            <div className="flex-1 px-4 py-3">
-              <p className="text-base font-semibold text-gray-900 mb-1">
+            <div className="flex-1 px-4 py-3 min-w-0">
+              <p className="text-base font-semibold text-gray-900 mb-1 truncate">
                 {item.title}
               </p>
-              <p className="text-sm text-gray-500">{item.description}</p>
+              <p className="text-sm text-gray-500 line-clamp-2">
+                {item.description}
+              </p>
             </div>
 
-            
             <img
               src={item.image}
               alt={item.title}
@@ -430,6 +470,25 @@ export default function App() {
             />
           </div>
         ))}
+      </div>
+      <div>
+        <div className="relative w-full mt-15">
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/001/234/456/small/a-man-drives-a-scooter-motorbike-for-delivery-business.jpg"
+            className="w-full h-70 object-cover opacity-40"
+          />
+
+          <div className="absolute inset-0 z-10 flex flex-wrap items-center justify-center gap-4 p-10">
+            {divisions.map((division) => (
+              <button
+                key={division}
+                className="px-8 py-3 rounded-full bg-purple-600 text-white font-semibold text-base tracking-wide shadow-md shadow-purple-400 w-70 h-13"
+              >
+                {division}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
