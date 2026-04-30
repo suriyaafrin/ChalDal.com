@@ -18,11 +18,11 @@ export default function App() {
       <Navbar /> 
       <Hiro />
       <Card />
+      <Popular />
       <Brand />
       <Shop />
       <Download />
-      <Warehouse />
-      <Popular />
+      <Warehouse />    
       <Delivery />
     </>
   );

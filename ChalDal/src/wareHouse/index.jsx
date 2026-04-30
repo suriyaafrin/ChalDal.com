@@ -3,7 +3,7 @@ import { warehouses } from "../../data/data.js";
 
 const Warehouse = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
+    <div className="pt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4 mx-4 sm:mx-8 lg:mx-16">
       {warehouses.map((item) => (
         <div
           key={item.id}
@@ -13,7 +13,7 @@ const Warehouse = () => {
             <p className="text-base font-semibold text-gray-900 mb-1 truncate">
               {item.title}
             </p>
-            <p className="text-sm text-gray-500 ">{item.description}</p>
+            <p className="text-sm text-gray-500">{item.description}</p>
           </div>
 
           <img
