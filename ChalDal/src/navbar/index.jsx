@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import SearchBar from "../searchBar/index.jsx"
+import SearchBar from "../searchBar/index.jsx";
+import SideBar from "../sideBar/index.jsx";
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -18,30 +19,19 @@ const Navbar = () => {
     <>
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-40"
+          className="fixed inset-0 bg-black/30 z-40"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
-      <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white z-50 shadow-2xl transform transition-transform duration-300 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="flex items-center justify-end px-5 py-5 border-b border-purple-100">
-          <i
-            className="fa-solid fa-xmark text-xl text-gray-500 cursor-pointer hover:text-purple-500"
-            onClick={() => setSidebarOpen(false)}
-          />
-        </div>
-      </div>
+      <SideBar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       <nav
         className="h-20 border-b border-purple-400 bg-linear-to-r from-[#d9d0e6] to-[#cfc6dd]
                       flex items-center px-6 sticky top-0 z-30 shadow-sm"
       >
-        <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
-          <div className="flex items-center gap-8">
+        <div className="flex items-center justify-between w-full mx-auto">
+          <div className="flex items-center gap-8 flex-1">
             <i
               className="fa-solid fa-bars text-2xl text-black cursor-pointer hover:text-purple-600 transition-colors"
               onClick={() => setSidebarOpen(true)}
@@ -71,7 +61,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <button className="h-10 px-6 bg-purple-500 text-white rounded font-medium hover:bg-purple-600 transition-colors">
+          <button className="h-10 px-6 bg-purple-500 text-white rounded font-medium hover:bg-purple-600 transition-colors ml-auto">
             Login
           </button>
         </div>

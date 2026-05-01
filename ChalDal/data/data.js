@@ -157,5 +157,22 @@ export const warehouses = [
     description: "customer savings",
   },
 ];
+export const stores = [
+    {
+      id: 1,
+      name: "Grocery",
+      img: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/components/header/CategoryMenuVertical/images/chaldalStore.svg",
+    },
+    {
+      id: 2,
+      name: "Pharmacy",
+      img: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/components/header/CategoryMenuVertical/images/pharmacyStore.svg",
+    },
+    {
+      id: 3,
+      name: "Cookups",
+      img: "https://chaldn.com/asset/egg-chaldal-web-release-id-29454/https/Default/components/header/CategoryMenuVertical/images/cookupsStore.svg",
+    },
+  ];
 export const divisions = ["Dhaka", "Chittagong", "Jessore"];
 
